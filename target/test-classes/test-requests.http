@@ -1,0 +1,243 @@
+GET http://localhost:8080/cartypes
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/cartypes?name=lpgh
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/cartypes?name=benzin
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/cartypes/3
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+POST http://localhost:8080/cartypes
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "eco"
+}
+
+###
+DELETE http://localhost:8080/cartypes/1
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+DELETE http://localhost:8080/users/2
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+
+###
+DELETE http://localhost:8080/cars/1
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+
+###
+DELETE http://localhost:8080/carparks/1
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+
+###
+DELETE http://localhost:8080/carparks/1/floors/1p
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+
+
+###
+DELETE http://localhost:8080/parkingspots/1
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+
+###
+DELETE http://localhost:8080/users/2
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+
+###
+GET http://localhost:8080/users
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/carparks?name=Novum
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/carparks/1/floors
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+POST http://localhost:8080/carparks
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Novum",
+  "address": "Prešov Hlavná 54",
+  "prices": 2,
+  "floors": [
+    {
+      "identifier": "1p",
+      "spots": [
+        {
+          "identifier": "1s",
+          "type": {
+            "name": "gas"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/carparks/1/spots?free=false
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/carparks/1/floors
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+POST http://localhost:8080/carparks/1/floors
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "identifier": "3p",
+  "spots": [
+    {
+      "identifier": "place-1",
+      "type":
+      {
+        "name": "benzin"
+      }
+    }
+  ]
+}
+
+###
+GET http://localhost:8080/parkingspots/2
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/carparks
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/carparks/1/spots?free=false
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+POST http://localhost:8080/carparks/1/floors/1p/spots
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "identifier": "4s"
+}
+
+###
+POST http://localhost:8080/users
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "firstName": "first",
+  "lastName": "last",
+  "email": "mail@email.com",
+  "cars": [
+    {
+      "brand": "Ferrari",
+      "model": "f-11",
+      "vrp": "FF-666077",
+      "colour": "blue",
+      "type":
+      {
+        "name": "gas"
+      },
+      "owner" :
+      {
+        "email" : "may"
+      }
+    }
+  ]
+}
+
+###
+POST http://localhost:8080/cars
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "brand": "audi",
+  "model": "A9",
+  "vrp": "KE-6660764",
+  "colour": "blue",
+  "owner": {
+    "firstName": "first",
+    "lastName": "last",
+    "email": "mail@email.com"
+  },
+  "type":
+  {
+    "name": "gas"
+  }
+}
+
+###
+GET http://localhost:8080/cars?user=4&vrp=BA322
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+GET http://localhost:8080/cars?vrp=KE-6660764&user=2
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+POST http://localhost:8080/reservations
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Content-Type: application/json
+Accept: application/json
+
+{
+  "car":
+  {
+    "id": 1
+  },
+  "spot":
+  {
+    "id": 1
+  }
+}
+
+###
+GET http://localhost:8080/reservations?user=2
+Authorization: Basic YWRtaW5AdnNhLnNrOjE=
+Accept: application/json
+
+###
+POST http://localhost:8080/reservations/1/end
+Authorization: Basic bWFpbEBlbWFpbC5jb206Mg==
+Accept: application/json
+
+
+
+
